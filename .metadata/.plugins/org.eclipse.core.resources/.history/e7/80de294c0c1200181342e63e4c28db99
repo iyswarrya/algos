@@ -1,0 +1,86 @@
+/*
+ ============================================================================
+ Name        : dictionary.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+/*
+ ============================================================================
+ Name        : trie.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+typedef struct keyvalue{
+	char * key;
+	char * value;
+} key_value;
+
+void work_with_single_struct(key_value * kv){
+	kv->key="hello111";
+	kv->value="senthil2222";
+	return;
+}
+
+void work_with_struct_array(key_value kv[]){
+	for(int i=0;i<5;i++){
+		printf("%s\n",kv[i].key);
+		printf("%s\n",kv[i].value);
+	}
+	printf("-----------&&&&&&&&&&&&--------------\n");
+	for(int i=0;i<5;i++){
+		kv[i].key = strcat("SHIT",kv[i].key);
+		kv[i].key = strcat("FUCK", kv[i].value);
+	}
+}
+
+
+int main(void){
+	key_value * kv;
+	kv = (key_value * )malloc(sizeof(key_value));
+	kv->key="hello";
+	kv->value="senthil";
+
+	printf("%s\n",kv->key);
+	printf("%s\n",kv->value);
+
+	key_value  kv1;
+
+	work_with_single_struct(&kv1);
+
+
+	printf("%s\n",kv1.key);
+	printf("%s\n",kv1.value);
+
+
+	key_value kv_array[5];
+	for(int i=0;i<5;i++){
+		//kv_array[i] = (key_value * )malloc(sizeof(key_value));
+		kv_array[i].key="hello22222";
+		kv_array[i].value="senthil33333";
+	}
+	for(int i=0;i<5;i++){
+		printf("%s\n",kv_array[i].key);
+		printf("%s\n",kv_array[i].value);
+	}
+	printf("---------------------------------------\n");
+	work_with_struct_array(&kv_array);
+	printf("--------=======================--------------\n");
+	for(int i=0;i<5;i++){
+		printf("%s\n",kv_array[i].key);
+		printf("%s\n",kv_array[i].value);
+	}
+}
+

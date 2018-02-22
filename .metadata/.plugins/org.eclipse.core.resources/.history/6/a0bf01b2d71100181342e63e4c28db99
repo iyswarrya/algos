@@ -1,0 +1,36 @@
+/*
+ ============================================================================
+ Name        : split.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    FILE* fp;
+    char  line[25];
+    int i = 0;
+    int total = 0;
+    fp = fopen("word.txt" , "r");
+    while (fgets(line, sizeof(line), fp) != NULL)
+    {
+    	if(line[i] == '\0'){
+
+    	}
+    	i++;
+
+    }
+
+    total = i;
+    for(i = 0; i < total; ++i)
+          printf("%s\n", line[i]);
+
+      return 0;
+}

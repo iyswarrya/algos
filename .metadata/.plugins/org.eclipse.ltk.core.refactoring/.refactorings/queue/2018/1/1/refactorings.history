@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;queue/practise.c&apos; to &apos;practise_linkedlist.c&apos;" description="Rename resource &apos;practise.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="practise.c" name="practise_linkedlist.c" stamp="1515089555506" updateReferences="true"/>
+</session>

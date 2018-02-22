@@ -1,0 +1,25 @@
+15:08:25 **** Incremental Build of configuration Debug for project binary tree ****
+make all 
+Building file: ../src/binarytree.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binarytree.d" -MT"src/binarytree.o" -o "src/binarytree.o" "../src/binarytree.c"
+../src/binarytree.c:253:2: warning: '/*' within block comment [-Wcomment]
+        /*search(root, 100);
+        ^
+../src/binarytree.c:231:8: warning: unused variable 'parentNode' [-Wunused-variable]
+        node *parentNode = NULL;
+              ^
+../src/binarytree.c:232:8: warning: unused variable 'nodeTobeDeleted' [-Wunused-variable]
+        node *nodeTobeDeleted = NULL;
+              ^
+3 warnings generated.
+Finished building: ../src/binarytree.c
+ 
+Building target: binary tree
+Invoking: MacOS X C Linker
+gcc  -o "binary tree"  ./src/binarytree.o   
+Finished building target: binary tree
+ 
+
+15:08:25 Build Finished (took 127ms)
+

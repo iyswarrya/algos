@@ -1,0 +1,165 @@
+22:54:38 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+22:54:42 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+make: Nothing to be done for `all'.
+22:54:58 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+22:55:04 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+make: Nothing to be done for `all'.
+22:56:10 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+22:57:28 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+22:58:21 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+../src/hash_table_dictionary.c:48:21: warning: format specifies type 'int' but the argument has type 'char *' [-Wformat]
+                printf("%c\t%d\n",key+i,(*(key+i)-'0'));
+                        ~~        ^~~~~
+                        %s
+1 warning generated.
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+22:58:55 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+../src/hash_table_dictionary.c:48:21: warning: format specifies type 'int' but the argument has type 'char *' [-Wformat]
+                printf("%c\t%d\n",key+i,(*(key+i)-'0'));
+                        ~~        ^~~~~
+                        %s
+1 warning generated.
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+23:00:02 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+../src/hash_table_dictionary.c:48:21: warning: format specifies type 'int' but the argument has type 'char *' [-Wformat]
+                printf("%c\t%d\n",key+i,(*(key+i)-'0'));
+                        ~~        ^~~~~
+                        %s
+1 warning generated.
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+23:00:18 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+23:00:32 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+23:00:58 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+23:01:19 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+23:01:45 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 

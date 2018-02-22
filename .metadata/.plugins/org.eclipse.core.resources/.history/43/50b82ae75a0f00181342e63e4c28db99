@@ -1,0 +1,89 @@
+/*
+ ============================================================================
+ Name        : hash_table.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+typedef struct keyValue{
+	char * key;
+	char * value;
+}keyvalue;
+
+typedef struct hash_map{
+	int size;
+	keyvalue ** valueArray;
+}hash_map;
+
+
+hash_map * create_hashmap(int size){
+	hash_map * hashmap;
+
+	hashmap = (hash_map*)malloc(sizeof(hash_map));
+	hashmap->size = size;
+	hashmap->valueArray = (keyvalue*)malloc(sizeof(keyvalue)* size);
+
+	return hashmap;
+}
+
+int hashcode(char *key, int size){
+	int hashcode=0;
+
+	for(int i=0;i<size;i++){
+		hashcode += (*(key+i))*31*i;
+	}
+
+	return hashcode % size;
+}
+
+hash_map * insert(char *key,char *value,hash_map * hash_map){
+	int position = hashcode(key,hash_map->size);
+	printf("hashcode:%d\n",position);
+	if(hash_map->valueArray[position]){
+		printf("key value pair cannot be inserted due to collision %d-------%d\n", position,hash_map->valueArray[position]);
+		return hash_map;
+
+	}
+	keyvalue * key_value;
+	key_value = malloc(sizeof(*key_value));
+	key_value->key = key;
+	key_value->value = value;
+	hash_map->valueArray[position] = key_value;
+	return hash_map;
+}
+
+char *find(char *key,hash_map * hash_map){
+
+	int position = hashcode(key,hash_map->size);
+
+	if(hash_map->valueArray[position] == NULL){
+		//printf("no key value pair found\n");
+		return NULL;
+	}
+	return hash_map->valueArray[position]->value;
+
+}
+
+int main(void) {
+	hash_map * hash_map = NULL;
+	int size = 10;
+	hash_map = create_hashmap(size);
+	//printf("%d\n",hashcode("john",size));printf("%d\n",hashcode("senthil",size));printf("%d\n",hashcode("ishu",size));
+	insert("john","pendleton_dr",hash_map);
+	//printf("%s\t%s\n",(hash_map->valueArray[0])->key, (hash_map->valueArray[0])->value);
+	insert("senthil","chennai",hash_map);
+	insert("ishu","pondicherry",hash_map);
+
+	//printf("found value: %s\n",find("sam",hash_map));
+	printf("found value:%s\n",find("ishu",hash_map));
+	printf("found value:%s\n",find("senthil",hash_map));
+	printf("found value:%s\n",find("john",hash_map));
+	return EXIT_SUCCESS;
+}

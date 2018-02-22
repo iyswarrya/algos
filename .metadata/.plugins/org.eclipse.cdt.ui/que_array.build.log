@@ -1,0 +1,15 @@
+14:57:57 **** Incremental Build of configuration Debug for project que_array ****
+make all 
+Building file: ../src/que_array.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/que_array.d" -MT"src/que_array.o" -o "src/que_array.o" "../src/que_array.c"
+Finished building: ../src/que_array.c
+ 
+Building target: que_array
+Invoking: MacOS X C Linker
+gcc  -o "que_array"  ./src/que_array.o   
+Finished building target: que_array
+ 
+
+14:57:57 Build Finished (took 244ms)
+

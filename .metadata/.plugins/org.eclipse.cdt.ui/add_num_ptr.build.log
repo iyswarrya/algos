@@ -1,0 +1,14 @@
+22:59:31 **** Incremental Build of configuration Debug for project add_num_ptr ****
+make all 
+Building target: add_num_ptr
+Invoking: MacOS X C Linker
+gcc  -o "add_num_ptr"  ./src/add_num_ptr.o ./src/permutation.o   
+duplicate symbol _main in:
+    ./src/add_num_ptr.o
+    ./src/permutation.o
+ld: 1 duplicate symbol for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [add_num_ptr] Error 1
+
+22:59:31 Build Finished (took 139ms)
+

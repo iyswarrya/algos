@@ -1,0 +1,15 @@
+18:56:47 **** Incremental Build of configuration Debug for project merge sort2 ****
+make all 
+Building file: ../src/merge sort.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/merge sort.d" -MT"src/merge\ sort.d" -o "src/merge sort.o" "../src/merge sort.c"
+Finished building: ../src/merge sort.c
+ 
+Building target: merge sort2
+Invoking: MacOS X C Linker
+gcc  -o "merge sort2"  ./src/merge\ sort.o   
+Finished building target: merge sort2
+ 
+
+18:56:48 Build Finished (took 402ms)
+

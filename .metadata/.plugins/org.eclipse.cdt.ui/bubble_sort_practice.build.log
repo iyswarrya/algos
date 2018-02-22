@@ -1,0 +1,15 @@
+11:42:47 **** Incremental Build of configuration Debug for project bubble_sort_practice ****
+make all 
+Building file: ../src/bubble_sort_practice.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/bubble_sort_practice.d" -MT"src/bubble_sort_practice.o" -o "src/bubble_sort_practice.o" "../src/bubble_sort_practice.c"
+Finished building: ../src/bubble_sort_practice.c
+ 
+Building target: bubble_sort_practice
+Invoking: MacOS X C Linker
+gcc  -o "bubble_sort_practice"  ./src/bubble_sort_practice.o   
+Finished building target: bubble_sort_practice
+ 
+
+11:42:47 Build Finished (took 189ms)
+

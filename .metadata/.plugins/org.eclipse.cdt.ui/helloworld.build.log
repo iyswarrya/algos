@@ -1,0 +1,14 @@
+22:59:33 **** Incremental Build of configuration Debug for project helloworld ****
+make all 
+Building target: helloworld
+Invoking: MacOS X C++ Linker
+g++  -o "helloworld"  ./src/hello_world.o ./src/helloworld.o   
+duplicate symbol _main in:
+    ./src/hello_world.o
+    ./src/helloworld.o
+ld: 1 duplicate symbol for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [helloworld] Error 1
+
+22:59:33 Build Finished (took 146ms)
+

@@ -1,0 +1,14 @@
+22:59:33 **** Incremental Build of configuration Debug for project hi ****
+make all 
+Building target: hi
+Invoking: MacOS X C++ Linker
+g++  -o "hi"  ./main.o ./malloc.o   
+duplicate symbol _main in:
+    ./main.o
+    ./malloc.o
+ld: 1 duplicate symbol for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [hi] Error 1
+
+22:59:33 Build Finished (took 136ms)
+

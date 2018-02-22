@@ -1,0 +1,61 @@
+/*
+ ============================================================================
+ Name        : string_permutation.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void string_permutation(char array[]);
+void swapAndPrint(char array[], char swapleft, char swapright , int arraysize);
+int main(void) {
+	char array[]="abc";
+	string_permutation(array);
+	return 0;
+}
+
+void swapAndPrint(char array[], char swapleft, char swapright , int arraysize){
+	char temp = swapleft;
+	swapleft = swapright;
+	swapright = temp;
+	for(int j = 0;j<arraysize-1;j++){
+		printf("%c",array[j]);
+	}
+}
+
+void string_permutation(char array[]){
+	int size=sizeof(array);
+	printf("%d", size);
+	for(int i = 0; i<size-1;i++){
+
+		char workerarray[size];
+
+		for(int j = 0;j<size-1;j++){
+			workerarray[j] = array[j];
+		}
+
+		swapAndPrint(workerarray, workerarray[0], workerarray[i], size);
+
+
+		printf("\n");
+//
+//
+//		for(int j =1; j<size-1;j++){
+//
+//			for(int k =j+1; k<size-1;k++){
+//				swapAndPrint(workerarray, workerarray[k], workerarray[j], size);
+//
+//			}
+//
+//		}
+//		printf("\n");
+	}
+
+
+
+}

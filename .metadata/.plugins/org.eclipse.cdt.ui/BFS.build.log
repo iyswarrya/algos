@@ -1,0 +1,15 @@
+22:02:38 **** Incremental Build of configuration Debug for project BFS ****
+make all 
+Building file: ../src/BFS.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BFS.d" -MT"src/BFS.o" -o "src/BFS.o" "../src/BFS.c"
+Finished building: ../src/BFS.c
+ 
+Building target: BFS
+Invoking: MacOS X C Linker
+gcc  -o "BFS"  ./src/BFS.o   
+Finished building target: BFS
+ 
+
+22:02:38 Build Finished (took 446ms)
+

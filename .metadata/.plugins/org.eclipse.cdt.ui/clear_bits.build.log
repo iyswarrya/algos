@@ -1,0 +1,26 @@
+22:47:53 **** Incremental Build of configuration Debug for project clear_bits ****
+make all 
+Building file: ../src/clear_bits.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/clear_bits.d" -MT"src/clear_bits.o" -o "src/clear_bits.o" "../src/clear_bits.c"
+../src/clear_bits.c:38:5: warning: unused variable 'binary_val' [-Wunused-variable]
+int binary_val = binary(5);
+    ^
+../src/clear_bits.c:91:20: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+int mask = ~((1<< i+1)-1);
+               ~~ ~^~
+../src/clear_bits.c:91:20: note: place parentheses around the '+' expression to silence this warning
+int mask = ~((1<< i+1)-1);
+                   ^
+                  (  )
+2 warnings generated.
+Finished building: ../src/clear_bits.c
+ 
+Building target: clear_bits
+Invoking: MacOS X C Linker
+gcc  -o "clear_bits"  ./src/clear_bits.o   
+Finished building target: clear_bits
+ 
+
+22:47:53 Build Finished (took 189ms)
+

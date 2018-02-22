@@ -1,0 +1,196 @@
+/*
+ ============================================================================
+ Name        : dictionary.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+/*
+ ============================================================================
+ Name        : trie.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#define ALPHABET_SIZE 26
+#define CHAR_TO_INDEX(c) ((int)c-(int)'a')   // if alphabet 'n' is stored in c, then it gives the distance between a and n
+#define ARRAY_SIZE(a) sizeof(a)/sizeof(a[0])
+
+typedef struct dictionary{
+	char *key;
+	char *mean;
+}dictionary_t;
+
+typedef struct trie{
+	struct trie * trie_array[ALPHABET_SIZE];
+	char *meaning;
+	bool end_of_word;
+}trie_t;
+
+trie_t *create_node(){
+	trie_t * node = NULL;
+
+	node = (trie_t*)malloc(sizeof(trie_t));
+
+	for(int i=0;i<ALPHABET_SIZE;i++){
+		node->trie_array[i]= NULL;
+	}
+
+	node->end_of_word = false;
+
+	return node;
+
+}
+
+//void insert(trie_t * root, const char*key, const char*mean){
+void insert(trie_t * root, const char *key, const char *mean){
+	printf("#######\\\\\\\\\\");
+	int level;
+	int length = strlen(key);
+	int index;
+	trie_t * pcrawl = root;
+
+	for(int level =0; level<length;level++){
+		printf("#######");
+		index = CHAR_TO_INDEX(key[level]);
+
+		if(!pcrawl->trie_array[index]){
+			pcrawl->trie_array[index] = create_node();
+		}
+		pcrawl = pcrawl->trie_array[index];
+
+	}
+
+	pcrawl->end_of_word = true;
+	pcrawl->meaning = (char*)malloc(sizeof(mean));
+	strcpy(pcrawl->meaning, mean);
+}
+
+char* search(trie_t * root, const char *key){
+	int level;
+	int length = strlen(key);
+	int index;
+	trie_t * pcrawl = root;
+
+	for(int level =0; level<length;level++){
+		index = CHAR_TO_INDEX(key[level]);
+
+		if(!pcrawl->trie_array[index]){
+		return NULL;
+		}
+
+		pcrawl = pcrawl->trie_array[index];
+
+	}
+	if(pcrawl->end_of_word){
+		return pcrawl->meaning;
+	}
+	return NULL;
+}
+
+int* filehandling(){
+
+    {
+    int lines_allocated = 128;
+    int max_line_len = 100;
+
+    /* Allocate lines of text */
+    char **words = (char **)malloc(sizeof(char*)*lines_allocated);
+    if (words==NULL)
+        {
+        fprintf(stderr,"Out of memory (1).\n");
+        exit(1);
+        }
+
+    FILE *fp = fopen("word.txt", "r");
+    if (fp == NULL)
+        {
+        fprintf(stderr,"Error opening file.\n");
+        exit(2);
+        }
+
+    int i;
+    for (i=0;1;i++)
+        {
+        int j;
+
+        /* Have we gone over our line allocation? */
+        if (i >= lines_allocated)
+            {
+            int new_size;
+
+            /* Double our allocation and re-allocate */
+            new_size = lines_allocated*2;
+            words = (char **)realloc(words,sizeof(char*)*new_size);
+            if (words==NULL)
+                {
+                fprintf(stderr,"Out of memory.\n");
+                exit(3);
+                }
+            lines_allocated = new_size;
+            }
+        /* Allocate space for the next line */
+        words[i] = malloc(max_line_len);
+        if (words[i]==NULL)
+            {
+            fprintf(stderr,"Out of memory (3).\n");
+            exit(4);
+            }
+        if (fgets(words[i],max_line_len-1,fp)==NULL)
+            break;
+
+        /* Get rid of CR or LF at end of line */
+        for (j=strlen(words[i])-1;j>=0 && (words[i][j]=='\n' || words[i][j]=='\r');j--)
+            ;
+        words[i][j+1]='\0';
+        }
+    /* Close file */
+    fclose(fp);
+
+    int j;
+    for(j = 0; j < i; j++)
+        printf("%s\n", words[j]);
+
+    /* Good practice to free memory */
+    for (;i>=0;i--)
+        free(words[i]);
+    free(words);
+    return &words;
+    }
+
+
+int main(void){
+	dictionary_t dictionaries[200];
+	trie_t * root = create_node();
+	char key_1[200][8];
+	char output_1[200][32];
+
+	printf("***********************************\n");
+	file_handle();
+	//printf("%s\n",key_1[1]);
+	printf("***********************************\n");
+	/*for(int i =0;i<100;i++){
+		insert(root,key_1,output_1);
+		}*/
+	printf("//////////////\n");
+	for(int i =0;i<10;i++){
+			printf("word:%s\t meaning:%s\n",(dictionaries+i)->key,(dictionaries+i)->mean);
+	}
+
+//	for(int i =0;i<10;i++){
+//		printf("%s ------%s\n", dictionaries->key, search(root,dictionaries->key) );
+//		}
+
+	return 0;
+}
+

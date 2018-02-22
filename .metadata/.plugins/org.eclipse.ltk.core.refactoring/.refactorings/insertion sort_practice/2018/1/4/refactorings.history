@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;insertion sort_practice/src/insertion sort.c&apos; to &apos;insertion sort_practice.c&apos;" description="Rename resource &apos;insertion sort.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/insertion sort.c" name="insertion sort_practice.c" stamp="1516648883785" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;linkedlist/src/linkedlist.c&apos; to &apos;singlelinkedlist.c&apos;" description="Rename resource &apos;linkedlist.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/linkedlist.c" name="singlelinkedlist.c" stamp="1513902874795" updateReferences="true"/>
+</session>

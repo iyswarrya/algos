@@ -1,0 +1,6 @@
+00:25:53 **** Incremental Build of configuration Debug for project dictionary ****
+make all 
+make: Nothing to be done for `all'.
+
+00:25:53 Build Finished (took 87ms)
+

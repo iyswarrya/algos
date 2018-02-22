@@ -1,0 +1,26 @@
+/*
+ ============================================================================
+ Name        : 17_02.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+float n;
+int main(void) {
+	printf("Enter the degree : ");
+	scanf("%f",&n);
+	if(n>0 && n<90)
+		printf("\nYou are headed N %f degree E",n);
+	else if(n>45 && n<180)
+		printf("\nYou are headed S %f degree E",(180-n));
+	else if(n>180 && n<270)
+		printf("\nYou are headed S %f degree W",(n-180));
+	else printf("\nYou are headed N %f degree W",(360-n));
+	return EXIT_SUCCESS;
+}

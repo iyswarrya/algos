@@ -1,0 +1,15 @@
+14:09:11 **** Incremental Build of configuration Debug for project LL_delete ****
+make all 
+Building file: ../src/LL_delete.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LL_delete.d" -MT"src/LL_delete.o" -o "src/LL_delete.o" "../src/LL_delete.c"
+Finished building: ../src/LL_delete.c
+ 
+Building target: LL_delete
+Invoking: MacOS X C Linker
+gcc  -o "LL_delete"  ./src/LL_delete.o   
+Finished building target: LL_delete
+ 
+
+14:09:11 Build Finished (took 188ms)
+

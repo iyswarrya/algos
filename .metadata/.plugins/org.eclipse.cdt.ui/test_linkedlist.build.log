@@ -1,0 +1,15 @@
+14:34:23 **** Incremental Build of configuration Debug for project test_linkedlist ****
+make all 
+Building file: ../src/test_linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_linkedlist.d" -MT"src/test_linkedlist.o" -o "src/test_linkedlist.o" "../src/test_linkedlist.c"
+Finished building: ../src/test_linkedlist.c
+ 
+Building target: test_linkedlist
+Invoking: MacOS X C Linker
+gcc  -o "test_linkedlist"  ./src/test_linkedlist.o   
+Finished building target: test_linkedlist
+ 
+
+14:34:24 Build Finished (took 712ms)
+

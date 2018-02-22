@@ -1,0 +1,15 @@
+22:21:18 **** Incremental Build of configuration Debug for project sum and product ****
+make all 
+Building file: ../src/sum and product.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/sum and product.d" -MT"src/sum\ and\ product.d" -o "src/sum and product.o" "../src/sum and product.c"
+Finished building: ../src/sum and product.c
+ 
+Building target: sum and product
+Invoking: MacOS X C Linker
+gcc  -o "sum and product"  ./src/sum\ and\ product.o   
+Finished building target: sum and product
+ 
+
+22:21:19 Build Finished (took 176ms)
+

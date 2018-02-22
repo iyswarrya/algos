@@ -1,0 +1,15 @@
+15:34:25 **** Incremental Build of configuration Debug for project circulat linked list ****
+make all 
+Building file: ../src/circulat linked list.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/circulat linked list.d" -MT"src/circulat\ linked\ list.d" -o "src/circulat linked list.o" "../src/circulat linked list.c"
+Finished building: ../src/circulat linked list.c
+ 
+Building target: circulat linked list
+Invoking: MacOS X C Linker
+gcc  -o "circulat linked list"  ./src/circulat\ linked\ list.o   
+Finished building target: circulat linked list
+ 
+
+15:34:26 Build Finished (took 138ms)
+

@@ -1,0 +1,22 @@
+21:31:35 **** Incremental Build of configuration Debug for project decimal ****
+make all 
+Building file: ../src/decimal.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/decimal.d" -MT"src/decimal.o" -o "src/decimal.o" "../src/decimal.c"
+../src/decimal.c:23:4: warning: implicit declaration of function 'binary' is invalid in C99 [-Wimplicit-function-declaration]
+        n=binary(29);
+          ^
+../src/decimal.c:25:4: warning: implicit declaration of function 'unset' is invalid in C99 [-Wimplicit-function-declaration]
+        k=unset(n,2);
+          ^
+2 warnings generated.
+Finished building: ../src/decimal.c
+ 
+Building target: decimal
+Invoking: MacOS X C Linker
+gcc  -o "decimal"  ./src/decimal.o   
+Finished building target: decimal
+ 
+
+21:31:35 Build Finished (took 612ms)
+

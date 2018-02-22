@@ -1,0 +1,20 @@
+22:59:32 **** Incremental Build of configuration Debug for project hello ****
+make all 
+Building file: ../src/name.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/name.d" -MT"src/name.o" -o "src/name.o" "../src/name.c"
+../src/name.c:12:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
+void main(){
+^
+../src/name.c:12:1: note: change return type to 'int'
+void main(){
+^~~~
+int
+../src/name.c:13:7: error: definition of variable with array type needs an explicit size or an initializer
+        char name[];
+             ^
+1 warning and 1 error generated.
+make: *** [src/name.o] Error 1
+
+22:59:33 Build Finished (took 195ms)
+

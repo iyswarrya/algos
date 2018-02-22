@@ -1,0 +1,28 @@
+23:02:13 **** Incremental Build of configuration Debug for project structs ****
+make all 
+Building file: ../src/structs1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/structs1.d" -MT"src/structs1.o" -o "src/structs1.o" "../src/structs1.c"
+../src/structs1.c:129:25: warning: incompatible pointer types passing 'key_value (*)[5]' to parameter of type 'key_value *' (aka 'struct keyvalue *') [-Wincompatible-pointer-types]
+        work_with_struct_array(&kv_array);
+                               ^~~~~~~~~
+../src/structs1.c:37:39: note: passing argument to parameter 'kv' here
+void work_with_struct_array(key_value kv[]){
+                                      ^
+../src/structs1.c:136:32: warning: incompatible pointer types passing 'key_value (*)[5]' to parameter of type 'key_value *' (aka 'struct keyvalue *') [-Wincompatible-pointer-types]
+        work_with_struct_array_by_ref(&kv_array);
+                                      ^~~~~~~~~
+../src/structs1.c:50:48: note: passing argument to parameter 'kv' here
+void work_with_struct_array_by_ref(key_value * kv){
+                                               ^
+2 warnings generated.
+Finished building: ../src/structs1.c
+ 
+Building target: structs
+Invoking: MacOS X C Linker
+gcc  -o "structs"  ./src/structs1.o   
+Finished building target: structs
+ 
+
+23:02:13 Build Finished (took 188ms)
+

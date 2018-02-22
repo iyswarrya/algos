@@ -1,0 +1,15 @@
+16:24:22 **** Incremental Build of configuration Debug for project circulat_doublylinkedlist ****
+make all 
+Building file: ../src/circulat_doublylinkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/circulat_doublylinkedlist.d" -MT"src/circulat_doublylinkedlist.o" -o "src/circulat_doublylinkedlist.o" "../src/circulat_doublylinkedlist.c"
+Finished building: ../src/circulat_doublylinkedlist.c
+ 
+Building target: circulat_doublylinkedlist
+Invoking: MacOS X C Linker
+gcc  -o "circulat_doublylinkedlist"  ./src/circulat_doublylinkedlist.o   
+Finished building target: circulat_doublylinkedlist
+ 
+
+16:24:22 Build Finished (took 131ms)
+

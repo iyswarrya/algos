@@ -1,0 +1,28 @@
+22:59:33 **** Incremental Build of configuration Release for project linkedlist ****
+make all 
+Building file: ../src/singlelinkedlist.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/singlelinkedlist.d" -MT"src/singlelinkedlist.o" -o "src/singlelinkedlist.o" "../src/singlelinkedlist.c"
+../src/singlelinkedlist.c:57:36: warning: incompatible pointer to integer conversion passing 'int (node *)' (aka 'int (struct node *)') to parameter of type 'int' [-Wint-conversion]
+        mid_point_val = midpoint_val(HEAD,midpoint);
+                                          ^~~~~~~~
+../src/singlelinkedlist.c:28:34: note: passing argument to parameter 'count' here
+int midpoint_val(node * head,int count);
+                                 ^
+../src/singlelinkedlist.c:194:16: warning: format specifies type 'int' but the argument has type 'node' (aka 'struct node') [-Wformat]
+        printf("%d\n",*(*p));
+                ~~    ^~~~~
+../src/singlelinkedlist.c:198:16: warning: format specifies type 'int' but the argument has type 'node' (aka 'struct node') [-Wformat]
+        printf("%d\n",*(*p));
+                ~~    ^~~~~
+../src/singlelinkedlist.c:203:5: error: conflicting types for 'midpoint'
+int midpoint(node * startNode, int endPosition){
+    ^
+../src/singlelinkedlist.c:27:5: note: previous declaration is here
+int midpoint(node * head);
+    ^
+3 warnings and 1 error generated.
+make: *** [src/singlelinkedlist.o] Error 1
+
+22:59:34 Build Finished (took 133ms)
+

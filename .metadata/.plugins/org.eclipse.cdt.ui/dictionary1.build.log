@@ -1,0 +1,22 @@
+11:16:01 **** Incremental Build of configuration Debug for project dictionary1 ****
+make all 
+Building file: ../src/dictionary1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/dictionary1.d" -MT"src/dictionary1.o" -o "src/dictionary1.o" "../src/dictionary1.c"
+../src/dictionary1.c:55:6: warning: unused variable 'level' [-Wunused-variable]
+        int level;
+            ^
+../src/dictionary1.c:76:6: warning: unused variable 'level' [-Wunused-variable]
+        int level;
+            ^
+Finished building: ../src/dictionary1.c
+2 warnings generated.
+ 
+Building target: dictionary1
+Invoking: MacOS X C Linker
+gcc  -o "dictionary1"  ./src/dictionary1.o   
+Finished building target: dictionary1
+ 
+
+11:16:02 Build Finished (took 128ms)
+

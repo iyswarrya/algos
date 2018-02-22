@@ -1,0 +1,14 @@
+22:59:29 **** Incremental Build of configuration Debug for project 11_05 ****
+make all 
+Building target: 11_05
+Invoking: MacOS X C Linker
+gcc  -o "11_05"  ./src/11_05.o   
+Undefined symbols for architecture x86_64:
+  "_strcpt", referenced from:
+      _main in 11_05.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [11_05] Error 1
+
+22:59:29 Build Finished (took 138ms)
+

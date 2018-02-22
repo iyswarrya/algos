@@ -1,0 +1,19 @@
+17:36:14 **** Incremental Build of configuration Debug for project string problems ****
+make all 
+Building file: ../src/string problems.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/string problems.d" -MT"src/string\ problems.d" -o "src/string problems.o" "../src/string problems.c"
+../src/string problems.c:257:45: warning: format specifies type 'unsigned int' but the argument has type 'char **' [-Wformat]
+                printf("%s at address %u\n",*(string+k) , string+k);
+                                      ~~                  ^~~~~~~~
+1 warning generated.
+Finished building: ../src/string problems.c
+ 
+Building target: string problems
+Invoking: MacOS X C Linker
+gcc  -o "string problems"  ./src/string\ problems.o   
+Finished building target: string problems
+ 
+
+17:36:15 Build Finished (took 547ms)
+

@@ -1,0 +1,15 @@
+16:28:52 **** Incremental Build of configuration Debug for project palindrome ****
+make all 
+Building file: ../src/palindrome.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/palindrome.d" -MT"src/palindrome.o" -o "src/palindrome.o" "../src/palindrome.c"
+Finished building: ../src/palindrome.c
+ 
+Building target: palindrome
+Invoking: MacOS X C Linker
+gcc  -o "palindrome"  ./src/palindrome.o   
+Finished building target: palindrome
+ 
+
+16:28:53 Build Finished (took 453ms)
+

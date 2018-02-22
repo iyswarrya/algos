@@ -1,0 +1,15 @@
+23:45:07 **** Incremental Build of configuration Debug for project sorted_array ****
+make all 
+Building file: ../src/sorted_array.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/sorted_array.d" -MT"src/sorted_array.o" -o "src/sorted_array.o" "../src/sorted_array.c"
+Finished building: ../src/sorted_array.c
+ 
+Building target: sorted_array
+Invoking: MacOS X C Linker
+gcc  -o "sorted_array"  ./src/sorted_array.o   
+Finished building target: sorted_array
+ 
+
+23:45:07 Build Finished (took 147ms)
+

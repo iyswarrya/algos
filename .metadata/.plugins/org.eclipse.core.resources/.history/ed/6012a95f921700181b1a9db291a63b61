@@ -1,0 +1,217 @@
+
+/*
+ ============================================================================
+ Name        : hash_table_list.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+typedef struct keyValue{
+	char * key;
+	char * value;
+	struct keyValue *next;
+}keyvalue;
+
+typedef struct hash_map{
+	int size;
+	keyvalue ** valueArray;
+}hash_map;
+
+
+hash_map * create_hashmap(int size){
+	//printf("%d", size);
+	hash_map * hashmap= NULL;
+	hashmap = malloc(sizeof(hash_map));
+	hashmap->size = size;
+	hashmap->valueArray = malloc(sizeof(keyvalue *)* size);
+
+	for(int i = 0; i < size; i++){
+		hashmap->valueArray[i] = NULL;
+	}
+
+	return hashmap;
+}
+
+int hashcode(char *key, int size){
+	int hashcode=0;
+
+	for(int i=0;i<size;i++){
+		hashcode += (*(key+i))*31*i;
+	}
+
+	return hashcode % size;
+}
+
+hash_map * insert(char *key,char *value,hash_map * hash_map){
+
+	int position = hashcode(key,hash_map->size);
+
+
+	keyvalue * key_value;
+	key_value = malloc(sizeof(struct keyValue));
+	key_value->key = key;
+	key_value->value = value;
+	key_value->next=NULL;
+
+	if(hash_map->valueArray[position] == NULL){
+		hash_map->valueArray[position] = key_value;
+	}else{
+
+		printf("there's a collision at %d\n",position);
+		keyvalue * listNode = hash_map->valueArray[position];
+		while(listNode->next != NULL){
+			listNode = listNode->next;
+		}
+		listNode->next = key_value;
+	}
+	return hash_map;
+
+}
+
+char *find(char *key,hash_map * hash_map){
+
+	int position = hashcode(key,hash_map->size);
+
+	if(hash_map->valueArray[position] == NULL){
+		return NULL;
+	}else {
+		keyvalue * listNode = hash_map->valueArray[position];
+		while(listNode != NULL){
+
+			if(strcmp(listNode->key,key) == 0){
+				return listNode->value;
+			}
+			printf("there's a collision at %d\n",position);
+			listNode = listNode->next;
+		}
+		return NULL;
+	}
+
+	return hash_map->valueArray[position]->value;
+
+}
+
+void * delete(hash_map * hashmap, char* key){
+	int position = hashcode(key,hashmap->size);
+	if(hashmap->valueArray[position] == NULL){
+		printf("no key value to delete\n");
+		return 0;
+	}
+	if(strcmp(hashmap->valueArray[position]->key, key)==0){
+		keyvalue * match_kv = hashmap->valueArray[position];
+		hashmap->valueArray[position] = hashmap->valueArray[position]->next;
+		free(match_kv);
+		return 0;
+	}
+	else{
+		keyvalue * listnode = hashmap->valueArray[position];
+		while(listnode->next){
+
+			if(strcmp(listnode->next->key,key)==0){
+				keyvalue * match_kv = listnode->next;
+				listnode->next = listnode->next->next;
+				free(match_kv);
+				return 0;
+			}
+			listnode = listnode->next;
+		}
+		printf("no key value to delete\n");
+	}
+
+	return hashmap;
+}
+
+void print(hash_map *hashmap){
+
+}
+
+void insertFromFile( hash_map * hash_map){
+	static const char filename[] = "words.txt";
+	FILE *file = fopen ( filename, "r" );
+	int ch,lines=0;
+	do
+	{
+		ch = fgetc(file);
+		if (ch == '\n')
+			lines++;
+	} while (ch != EOF);
+
+	rewind(file);
+	printf("%d\n",lines);
+	char *contents[lines];
+	int i = 0;
+	size_t len = 0;
+	for(i = 0; i < lines; i++)
+	{
+		contents[i] = NULL;
+		len = 0;
+		getline(&contents[i], &len, file);
+	}
+	for(i = 0; i < lines; i++)
+	{// for each line from the file
+		char *ch;
+		//split by tab
+		ch = strtok(contents[i], "\t");//will return first token of the first word split by tab
+		int k=0;
+		char * key;
+		char * value;
+		while (ch != NULL) {
+			if(k==0){
+				//printf("%s\n",ch);
+				// to get actual word
+				key=ch;
+			}else{
+				//printf("%s\n",ch);
+				// to get meaning in the second iteration
+				value=ch;
+			}
+			//printf("----------------------------------------\n");
+			k++;
+			ch = strtok(NULL, "\n");//
+		}
+		insert(key, value,hash_map);
+	}
+	fclose(file);
+}
+
+
+
+int main(void) {
+	printf("####");
+	hash_map * hash_map = NULL;
+	int size = 455;
+	printf("####");
+	hash_map = create_hashmap(size);
+	printf("####\n");
+	//for(int i =0;i<size;i++){
+		insertFromFile(hash_map);
+	//}
+//	insert("john","pendleton_dr",hash_map);
+//	insert("senthil","chennai",hash_map);
+//	insert("ishu","pondicherry",hash_map);
+//	for(int j=0;j<size;j++){
+//		if(hash_map->valueArray[j]){
+//			printf("position:%d\t%s\t%s\n",j, hash_map->valueArray[j]->key, hash_map->valueArray[j]->value);
+//		}
+//	}
+//	printf("found value: %s\n",find("quake",hash_map));
+//	printf("found value:%s\n",find("inflow",hash_map));
+//	printf("found value:%s\n",find("deserted",hash_map));
+//
+//	delete(hash_map, "inflow");
+//	//delete(hash_map, "john");
+//	printf("------- after deletion--------\n");
+//	printf("found value:%s\n",find("quake",hash_map));
+//	printf("found value:%s\n",find("inflow",hash_map));
+//	printf("found value:%s\n",find("deserted",hash_map));
+	return EXIT_SUCCESS;
+}

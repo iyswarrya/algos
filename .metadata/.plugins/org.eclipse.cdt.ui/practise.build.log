@@ -1,0 +1,15 @@
+16:58:28 **** Incremental Build of configuration Debug for project practise ****
+make all 
+Building file: ../src/practise.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/practise.d" -MT"src/practise.o" -o "src/practise.o" "../src/practise.c"
+Finished building: ../src/practise.c
+ 
+Building target: practise
+Invoking: MacOS X C Linker
+gcc  -o "practise"  ./src/practise.o   
+Finished building target: practise
+ 
+
+16:58:29 Build Finished (took 639ms)
+

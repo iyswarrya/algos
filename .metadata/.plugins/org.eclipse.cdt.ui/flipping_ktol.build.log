@@ -1,0 +1,19 @@
+14:47:42 **** Incremental Build of configuration Debug for project flipping_ktol ****
+make all 
+Building file: ../src/flipping_ktol.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/flipping_ktol.d" -MT"src/flipping_ktol.o" -o "src/flipping_ktol.o" "../src/flipping_ktol.c"
+../src/flipping_ktol.c:16:6: warning: unused variable 'x' [-Wunused-variable]
+        int x;
+            ^
+1 warning generated.
+Finished building: ../src/flipping_ktol.c
+ 
+Building target: flipping_ktol
+Invoking: MacOS X C Linker
+gcc  -o "flipping_ktol"  ./src/flipping_ktol.o   
+Finished building target: flipping_ktol
+ 
+
+14:47:43 Build Finished (took 1s.264ms)
+

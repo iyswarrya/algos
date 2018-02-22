@@ -1,0 +1,143 @@
+/*
+ ============================================================================
+ Name        : dictionary.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+/*
+ ============================================================================
+ Name        : trie.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+typedef struct keyvalue{
+	char * key;
+	char * value;
+} key_value;
+
+void work_with_single_struct(key_value * kv){
+	kv->key="hello111";
+	kv->value="senthil2222";
+	return;
+}
+
+void work_with_struct_array(key_value kv[]){
+	for(int i=0;i<5;i++){
+		printf("%s\n",kv[i].key);
+		printf("%s\n",kv[i].value);
+	}
+	printf("-----------&&&&&&&&&&&&--------------\n");
+	for(int i=0;i<5;i++){
+		char * t1 = "hello11111111111111331123123";
+		kv[i].key = t1;
+		kv[i].value = "senthil0000000000000";
+	}
+}
+
+void work_with_struct_array_by_ref(key_value * kv){
+	printf("-----------%%%%%%%%%%%%%%%%--------------\n");
+	for(int i=0;i<5;i++){
+		printf("%s\n",(kv+i)->key);
+		printf("%s\n",(kv+i)->value);
+	}
+	printf("-----------000000000000000--------------\n");
+	for(int i=0;i<5;i++){
+		(kv+i)->key = "hello56687687e23847947";
+		(kv+i)->value = "senthil21389740924912734";
+	}
+}
+
+
+void filehandle(){
+	static const char filename[] = "file.txt";
+	FILE *file = fopen ( filename, "r" );
+	const char * lines[10];
+	if ( file != NULL )
+	{
+		char line [ 128 ]; /* or other suitable maximum line size */
+		int i=0;
+		while ( fgets ( line, sizeof line, file ) != NULL ) /* read a line */
+		{
+			fputs ( line, stdout ); /* write the line */
+			lines[i++]=line;
+		}
+		fclose ( file );
+	}
+	else
+	{
+		perror ( filename ); /* why didn't the file open? */
+	}
+	printf("----------------------------------\n");
+	for(int i=0;i<10;i++){
+		printf("%s",lines[i]);
+		char * pch;
+		pch = strtok (lines[i]," \t");
+		while (pch != NULL)
+		{
+			printf ("=========%s\n",pch);
+			pch = strtok (NULL, " \t");
+		}
+	}
+	return ;
+}
+
+
+int main(void){
+	key_value * kv;
+	kv = (key_value * )malloc(sizeof(key_value));
+	kv->key="hello";
+	kv->value="senthil";
+
+	printf("%s\n",kv->key);
+	printf("%s\n",kv->value);
+
+	key_value  kv1;
+
+	work_with_single_struct(&kv1);
+
+
+	printf("%s\n",kv1.key);
+	printf("%s\n",kv1.value);
+
+
+	key_value kv_array[5];
+	for(int i=0;i<5;i++){
+		//kv_array[i] = (key_value * )malloc(sizeof(key_value));
+		kv_array[i].key="hello22222";
+		kv_array[i].value="senthil33333";
+	}
+	for(int i=0;i<5;i++){
+		printf("%s\n",kv_array[i].key);
+		printf("%s\n",kv_array[i].value);
+	}
+	printf("---------------------------------------\n");
+	work_with_struct_array(&kv_array);
+	printf("--------=======================--------------\n");
+	for(int i=0;i<5;i++){
+		printf("%s\n",kv_array[i].key);
+		printf("%s\n",kv_array[i].value);
+	}
+
+	work_with_struct_array_by_ref(&kv_array);
+	printf("--------289472309523-08385023--------------\n");
+	for(int i=0;i<5;i++){
+		printf("%s\n",kv_array[i].key);
+		printf("%s\n",kv_array[i].value);
+	}
+
+	filehandle();
+}
+

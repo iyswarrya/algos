@@ -1,0 +1,104 @@
+/*
+ ============================================================================
+ Name        : hash_table_list.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdlib.h>
+#include <math.h>
+
+typedef struct keyValue{
+	char * key;
+	char * value;
+	struct keyValue *next;
+}keyvalue;
+
+typedef struct hash_map{
+	int size;
+	keyvalue ** valueArray;
+}hash_map;
+
+
+hash_map * create_hashmap(int size){
+	//printf("%d", size);
+	hash_map * hashmap= NULL;
+	hashmap = malloc(sizeof(hash_map));
+	hashmap->size = size;
+	hashmap->valueArray = malloc(sizeof(keyvalue *)* size);
+
+	for(int i = 0; i < size; i++){
+		hashmap->valueArray[i] = NULL;
+	}
+
+	return hashmap;
+}
+
+int hashcode(char *key, int size){
+	int hashcode=0;
+
+	for(int i=0;i<size;i++){
+		hashcode += (*(key+i))*31*i;
+	}
+
+	return hashcode % size;
+}
+
+hash_map * insert(char *key,char *value,hash_map * hash_map){
+	int position = hashcode(key,hash_map->size);
+	//printf("####");
+	printf("insert:  hashcode:%d\n",position);
+
+	while(hash_map->valueArray[position] != NULL){
+		printf("There's a collision\n");
+		hash_map->valueArray[position] = hash_map->valueArray[position]->next;
+	}
+	keyvalue * key_value;
+	key_value = malloc(sizeof(struct keyValue));
+	key_value->key = key;
+	key_value->value = value;
+	key_value->next=NULL;
+	hash_map->valueArray[position] = key_value;
+	printf("####");
+
+	return hash_map;
+}
+
+char *find(char *key,hash_map * hash_map){
+
+	int position = hashcode(key,hash_map->size);
+
+	if(hash_map->valueArray[position] == NULL){
+		return NULL;
+	}
+
+	while((hash_map->valueArray[position]->key != key)){
+		hash_map->valueArray[position] = hash_map->valueArray[position]->next;
+		if(hash_map->valueArray[position] == NULL){
+			return NULL;
+		}
+	}
+
+	return hash_map->valueArray[position]->value;
+
+}
+
+int main(void) {
+	hash_map * hash_map = NULL;
+	int size = 5;
+	hash_map = create_hashmap(size);
+	printf("%d\n",hashcode("john",size));printf("%d\n",hashcode("senthil",size));printf("%d\n",hashcode("ishu",size));
+	insert("john","pendleton_dr",hash_map);
+	//printf("%s\t%s\n",(hash_map->valueArray[hashcode("john",size)])->key, (hash_map->valueArray[hashcode("john",size)])->value);
+	insert("senthil","chennai",hash_map);
+	insert("ishu","pondicherry",hash_map);
+
+	printf("found value: %s\n",find("sam",hash_map));
+	printf("found value:%s\n",find("ishu",hash_map));
+	printf("found value:%s\n",find("senthil",hash_map));
+	printf("found value:%s\n",find("john",hash_map));
+	return EXIT_SUCCESS;
+}

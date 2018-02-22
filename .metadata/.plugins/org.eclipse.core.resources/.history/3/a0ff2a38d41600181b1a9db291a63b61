@@ -1,0 +1,131 @@
+/*
+ ============================================================================
+ Name        : trei_deletion1.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+#define SIZE 26
+
+struct trie
+{
+	bool leaf;
+	struct trie *children[SIZE];
+};
+
+struct trie *newNode()
+{
+	struct trie *temp = (struct trie *)malloc(sizeof(struct trie));
+	temp->leaf = false;
+
+	for(int i=0; i<SIZE; i++)
+		temp->children[i] = NULL;
+
+	return temp;
+}
+
+void insert(struct trie *root, string key)
+{
+	int N = key.size();
+	for(int i=0; i<N; i++)
+	{
+		int index = key[i] - 'a';
+		if ( !root->children[index] )
+			root->children[index] = newNode();
+
+		root = root->children[index];
+	}
+
+	root->leaf = true;
+}
+
+bool search(struct trie *root, string key)
+{
+	if ( !root )
+		return false;
+
+	int N = key.length();
+	for(int i=0; i<N; i++)
+	{
+		int index = key[i] - 'a';
+		if ( !root->children[index] )
+			return false;
+
+		root = root->children[index];
+	}
+
+	if ( !root->leaf )
+		return false;
+
+	return true;
+}
+
+bool isEmpty(struct trie *root)
+{
+	for(int i=0; i<SIZE; i++)
+		if ( root->children[i] )
+			return false;
+	return true;
+}
+
+struct trie *remove(struct trie *root, string key, int depth)
+{
+	if ( !root )	return NULL;
+
+	if ( depth == key.size() )
+	{
+		if ( root->leaf )		root->leaf = false;
+		if ( isEmpty(root) )
+		{
+			free(root);
+			root = NULL;
+		}
+
+		return root;
+	}
+
+	int index = key[depth]-'a';
+	root->children[index] = remove(root->children[index], key, depth+1);
+
+	if ( isEmpty(root) )
+	{
+		free(root);
+		root = NULL;
+	}
+
+	return root;
+}
+
+int main()
+{
+	struct trie *root = newNode();
+	insert(root, "hello");
+	insert(root, "help");
+	insert(root, "hero");
+	insert(root, "heroplane");
+	insert(root, "air");
+	insert(root, "hair");
+
+	cout << search(root, "hello") << endl;
+	cout << search(root, "help") << endl;
+	cout << search(root, "hero") << endl;
+
+	root = remove(root, "help", 0);
+	root = remove(root, "hero", 0);
+
+	cout << search(root, "hair") << endl;
+	cout << search(root, "heroplane") << endl;
+
+	cout << search(root, "help") << endl;
+	cout << search(root, "hero") << endl;
+	cout << search(root, "hello") << endl;
+
+	return 0;
+}

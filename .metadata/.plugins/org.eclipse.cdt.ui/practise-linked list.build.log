@@ -1,0 +1,6 @@
+12:05:24 **** Incremental Build of configuration Debug for project practise-linked list ****
+make all 
+make: Nothing to be done for `all'.
+
+12:05:25 Build Finished (took 96ms)
+

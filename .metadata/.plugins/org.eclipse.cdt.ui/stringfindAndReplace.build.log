@@ -1,0 +1,35 @@
+23:20:34 **** Incremental Build of configuration Debug for project stringfindAndReplace ****
+make all 
+Building file: ../src/stringfindAndReplace.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/stringfindAndReplace.d" -MT"src/stringfindAndReplace.o" -o "src/stringfindAndReplace.o" "../src/stringfindAndReplace.c"
+../src/stringfindAndReplace.c:18:27: warning: implicitly declaring library function 'strlen' with type 'unsigned long (const char *)' [-Wimplicit-function-declaration]
+     while (str1_offset < strlen(str1))
+                          ^
+../src/stringfindAndReplace.c:18:27: note: include the header <string.h> or explicitly provide a declaration for 'strlen'
+../src/stringfindAndReplace.c:20:14: warning: implicit declaration of function 'findandreplace' is invalid in C99 [-Wimplicit-function-declaration]
+         if (findandreplace(str1,str1_offset, str2, str3, str4) == 0)
+             ^
+../src/stringfindAndReplace.c:31:9: warning: implicitly declaring library function 'strncmp' with type 'int (const char *, const char *, unsigned long)' [-Wimplicit-function-declaration]
+    if (strncmp(s1, s2, strlen(s2)) == 0) {
+        ^
+../src/stringfindAndReplace.c:31:9: note: include the header <string.h> or explicitly provide a declaration for 'strncmp'
+../src/stringfindAndReplace.c:32:9: warning: implicitly declaring library function 'strcpy' with type 'char *(char *, const char *)' [-Wimplicit-function-declaration]
+        strcpy(s4+strlen(s4), s3);
+        ^
+../src/stringfindAndReplace.c:32:9: note: include the header <string.h> or explicitly provide a declaration for 'strcpy'
+../src/stringfindAndReplace.c:37:9: warning: implicitly declaring library function 'strncpy' with type 'char *(char *, const char *, unsigned long)' [-Wimplicit-function-declaration]
+        strncpy(s4+str1_offset, s1, 1);
+        ^
+../src/stringfindAndReplace.c:37:9: note: include the header <string.h> or explicitly provide a declaration for 'strncpy'
+5 warnings generated.
+Finished building: ../src/stringfindAndReplace.c
+ 
+Building target: stringfindAndReplace
+Invoking: MacOS X C Linker
+gcc  -o "stringfindAndReplace"  ./src/stringfindAndReplace.o   
+Finished building target: stringfindAndReplace
+ 
+
+23:20:34 Build Finished (took 181ms)
+

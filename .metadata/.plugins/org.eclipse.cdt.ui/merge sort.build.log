@@ -1,0 +1,6 @@
+12:45:39 **** Incremental Build of configuration Debug for project merge sort ****
+make all 
+make: Nothing to be done for `all'.
+
+12:45:39 Build Finished (took 209ms)
+

@@ -1,0 +1,15 @@
+23:01:45 **** Incremental Build of configuration Debug for project hash_table_dictionary ****
+make all 
+Building file: ../src/hash_table_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table_dictionary.d" -MT"src/hash_table_dictionary.o" -o "src/hash_table_dictionary.o" "../src/hash_table_dictionary.c"
+Finished building: ../src/hash_table_dictionary.c
+ 
+Building target: hash_table_dictionary
+Invoking: MacOS X C Linker
+gcc  -o "hash_table_dictionary"  ./src/hash_table_dictionary.o   
+Finished building target: hash_table_dictionary
+ 
+
+23:01:46 Build Finished (took 181ms)
+

@@ -1,0 +1,40 @@
+/*
+ ============================================================================
+ Name        : string_permutation.c
+ Author      : ishu
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void string_permutation(int array[]);
+int main(void) {
+	char array[]="abc";
+	string_permutation(array);
+	return 0;
+}
+void string_permutation(int array[]){
+	int size=sizeof(array);
+
+	for(int i = 0; i<size-1;i++){
+	int temp = array[0];
+	array[0] = array[i];
+	array[i] = temp;
+
+		for(int j = 0;j<size-1;j++){
+		printf("%c",array[j]);
+		}
+
+		temp = array[1];
+		array[1] = array[2];
+		array[2] = temp;
+
+		for(int k = 0;k<size-1;k++){
+				printf("%c",array[k]);
+				}
+}
+}

@@ -1,0 +1,23 @@
+12:05:28 **** Incremental Build of configuration Debug for project hash_table ****
+make all 
+Building file: ../src/hash_table.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_table.d" -MT"src/hash_table.o" -o "src/hash_table.o" "../src/hash_table.c"
+../src/hash_table.c:58:87: warning: format specifies type 'int' but the argument has type 'keyvalue *' (aka 'struct keyValue *') [-Wformat]
+                printf("key value pair cannot be inserted due to collision %d-------%d\n", position,hash_map->valueArray[position]);
+                                                                                    ~~              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/hash_table.c:73:90: warning: implicitly declaring library function 'strcmp' with type 'int (const char *, const char *)' [-Wimplicit-function-declaration]
+        if(hash_map->valueArray[position] == NULL || (hash_map->valueArray[position] != NULL && strcmp(hash_map->valueArray[position]->key,key) != 0)){
+                                                                                                ^
+../src/hash_table.c:73:90: note: include the header <string.h> or explicitly provide a declaration for 'strcmp'
+2 warnings generated.
+Finished building: ../src/hash_table.c
+ 
+Building target: hash_table
+Invoking: MacOS X C Linker
+gcc  -o "hash_table"  ./src/hash_table.o   
+Finished building target: hash_table
+ 
+
+12:05:28 Build Finished (took 454ms)
+

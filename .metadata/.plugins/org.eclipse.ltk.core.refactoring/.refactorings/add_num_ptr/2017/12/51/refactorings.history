@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;add_num_ptr/src/permutation&apos; to &apos;permutation.c&quot;&apos;" description="Rename resource &apos;permutation&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/permutation" name="permutation.c&quot;" stamp="1513900656647" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;add_num_ptr/src/permutation.c&quot;&apos; to &apos;permutation&apos;" description="Rename resource &apos;permutation.c&quot;&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/permutation.c&quot;" name="permutation" stamp="1513900666774" updateReferences="true"/>
+</session>

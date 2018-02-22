@@ -1,0 +1,103 @@
+01:10:37 **** Incremental Build of configuration Debug for project queue_final ****
+make all 
+Building file: ../src/queue_final.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/queue_final.d" -MT"src/queue_final.o" -o "src/queue_final.o" "../src/queue_final.c"
+../src/queue_final.c:32:25: error: assigning to 'queue_t' (aka 'struct queue') from incompatible type 'int'
+                        *(queue+queue->front)= value;
+                                             ^ ~~~~~
+../src/queue_final.c:37:25: error: assigning to 'queue_t' (aka 'struct queue') from incompatible type 'int'
+                        *(queue+queue->rear) = value;
+                                             ^ ~~~~~
+../src/queue_final.c:44:24: error: assigning to 'queue_t' (aka 'struct queue') from incompatible type 'int'
+                *(queue+queue->rear) = value;
+                                     ^ ~~~~~
+../src/queue_final.c:54:10: warning: incompatible pointer to integer conversion returning 'void *' from a function with result type 'int' [-Wint-conversion]
+                return NULL;
+                       ^~~~
+/usr/include/sys/_types/_null.h:29:15: note: expanded from macro 'NULL'
+#define NULL  __DARWIN_NULL
+              ^~~~~~~~~~~~~
+/usr/include/sys/_types.h:52:23: note: expanded from macro '__DARWIN_NULL'
+#define __DARWIN_NULL ((void *)0)
+                      ^~~~~~~~~~~
+../src/queue_final.c:58:18: error: assigning to 'int' from incompatible type 'queue_t' (aka 'struct queue')
+                dequeued_value = *(queue+(queue->front));
+                               ^ ~~~~~~~~~~~~~~~~~~~~~~~
+../src/queue_final.c:63:18: error: assigning to 'int' from incompatible type 'queue_t' (aka 'struct queue')
+                dequeued_value = *(queue+(queue->front));
+                               ^ ~~~~~~~~~~~~~~~~~~~~~~~
+../src/queue_final.c:64:27: error: assigning to 'queue_t' (aka 'struct queue') from incompatible type 'int'
+                *(queue+(queue->front)) = 0;
+                                        ^ ~
+../src/queue_final.c:72:10: warning: incompatible pointer types passing 'queue_t *[4]' to parameter of type 'queue_t *' (aka 'struct queue *') [-Wincompatible-pointer-types]
+        enqueue(queue, 6);
+                ^~~~~
+../src/queue_final.c:21:24: note: passing argument to parameter 'queue' here
+void enqueue(queue_t * queue, int value){
+                       ^
+../src/queue_final.c:73:10: warning: incompatible pointer types passing 'queue_t *[4]' to parameter of type 'queue_t *' (aka 'struct queue *') [-Wincompatible-pointer-types]
+        enqueue(queue, 4);
+                ^~~~~
+../src/queue_final.c:21:24: note: passing argument to parameter 'queue' here
+void enqueue(queue_t * queue, int value){
+                       ^
+../src/queue_final.c:74:10: warning: incompatible pointer types passing 'queue_t *[4]' to parameter of type 'queue_t *' (aka 'struct queue *') [-Wincompatible-pointer-types]
+        enqueue(queue, 3);
+                ^~~~~
+../src/queue_final.c:21:24: note: passing argument to parameter 'queue' here
+void enqueue(queue_t * queue, int value){
+                       ^
+../src/queue_final.c:75:10: warning: incompatible pointer types passing 'queue_t *[4]' to parameter of type 'queue_t *' (aka 'struct queue *') [-Wincompatible-pointer-types]
+        enqueue(queue, 7);
+                ^~~~~
+../src/queue_final.c:21:24: note: passing argument to parameter 'queue' here
+void enqueue(queue_t * queue, int value){
+                       ^
+../src/queue_final.c:77:17: warning: format specifies type 'int' but the argument has type 'queue_t *' (aka 'struct queue *') [-Wformat]
+                printf("%d\n",*(queue+i));
+                        ~~    ^~~~~~~~~~
+../src/queue_final.c:79:32: warning: incompatible pointer types passing 'queue_t *[4]' to parameter of type 'queue_t *' (aka 'struct queue *') [-Wincompatible-pointer-types]
+        printf("dequed: %d\n",dequeue(queue));
+                                      ^~~~~
+../src/queue_final.c:49:22: note: passing argument to parameter 'queue' here
+int dequeue(queue_t *queue){
+                     ^
+../src/queue_final.c:80:32: warning: incompatible pointer types passing 'queue_t *[4]' to parameter of type 'queue_t *' (aka 'struct queue *') [-Wincompatible-pointer-types]
+        printf("dequed: %d\n",dequeue(queue));
+                                      ^~~~~
+../src/queue_final.c:49:22: note: passing argument to parameter 'queue' here
+int dequeue(queue_t *queue){
+                     ^
+../src/queue_final.c:81:10: warning: incompatible pointer types passing 'queue_t *[4]' to parameter of type 'queue_t *' (aka 'struct queue *') [-Wincompatible-pointer-types]
+        enqueue(queue, 71);
+                ^~~~~
+../src/queue_final.c:21:24: note: passing argument to parameter 'queue' here
+void enqueue(queue_t * queue, int value){
+                       ^
+../src/queue_final.c:82:19: error: member reference base type 'queue_t *' (aka 'struct queue *') is not a structure or union
+        for(int i = queue->front;i < N;i++){
+                    ~~~~~^ ~~~~~
+../src/queue_final.c:83:17: warning: format specifies type 'int' but the argument has type 'queue_t *' (aka 'struct queue *') [-Wformat]
+                printf("%d\n",*(queue+i));
+                        ~~    ^~~~~~~~~~
+../src/queue_final.c:85:10: error: member reference base type 'queue_t *' (aka 'struct queue *') is not a structure or union
+        if(queue->rear < queue->front){
+           ~~~~~^ ~~~~
+../src/queue_final.c:85:24: error: member reference base type 'queue_t *' (aka 'struct queue *') is not a structure or union
+        if(queue->rear < queue->front){
+                         ~~~~~^ ~~~~~
+../src/queue_final.c:86:20: error: member reference base type 'queue_t *' (aka 'struct queue *') is not a structure or union
+                for(int i = queue->rear;i < queue->front;i++){
+                            ~~~~~^ ~~~~
+../src/queue_final.c:86:36: error: member reference base type 'queue_t *' (aka 'struct queue *') is not a structure or union
+                for(int i = queue->rear;i < queue->front;i++){
+                                            ~~~~~^ ~~~~~
+../src/queue_final.c:87:18: warning: format specifies type 'int' but the argument has type 'queue_t *' (aka 'struct queue *') [-Wformat]
+                        printf("%d\n",*(queue+i));
+                                ~~    ^~~~~~~~~~
+11 warnings and 11 errors generated.
+make: *** [src/queue_final.o] Error 1
+
+01:10:37 Build Finished (took 234ms)
+

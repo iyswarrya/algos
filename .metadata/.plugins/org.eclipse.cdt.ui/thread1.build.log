@@ -1,0 +1,15 @@
+11:31:58 **** Incremental Build of configuration Debug for project thread1 ****
+make all 
+Building file: ../src/thread1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/thread1.d" -MT"src/thread1.o" -o "src/thread1.o" "../src/thread1.c"
+Finished building: ../src/thread1.c
+ 
+Building target: thread1
+Invoking: MacOS X C Linker
+gcc  -o "thread1"  ./src/thread1.o   
+Finished building target: thread1
+ 
+
+11:31:59 Build Finished (took 490ms)
+

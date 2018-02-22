@@ -1,0 +1,14 @@
+22:59:34 **** Incremental Build of configuration Debug for project senthil ****
+make all 
+Building target: senthil
+Invoking: MacOS X C Linker
+gcc  -o "senthil"  ./src/macro.o ./src/senthil.o   
+duplicate symbol _main in:
+    ./src/macro.o
+    ./src/senthil.o
+ld: 1 duplicate symbol for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [senthil] Error 1
+
+22:59:34 Build Finished (took 134ms)
+

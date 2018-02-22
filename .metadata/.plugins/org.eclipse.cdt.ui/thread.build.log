@@ -1,0 +1,28 @@
+11:27:57 **** Incremental Build of configuration Debug for project thread ****
+make all 
+Building file: ../src/thread.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/thread.d" -MT"src/thread.o" -o "src/thread.o" "../src/thread.c"
+../src/thread.c:23:40: warning: incompatible pointer types passing 'void *(int)' to parameter of type 'void *(*)(void *)' [-Wincompatible-pointer-types]
+                if(pthread_create(&threads[i], NULL, printfun1, thread_number)< 0){
+                                                     ^~~~~~~~~
+/usr/include/pthread.h:313:11: note: passing argument to parameter here
+                void *(*)(void *), void * __restrict);
+                        ^
+../src/thread.c:23:51: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'void *' [-Wint-conversion]
+                if(pthread_create(&threads[i], NULL, printfun1, thread_number)< 0){
+                                                                ^~~~~~~~~~~~~
+/usr/include/pthread.h:313:39: note: passing argument to parameter here
+                void *(*)(void *), void * __restrict);
+                                                    ^
+2 warnings generated.
+Finished building: ../src/thread.c
+ 
+Building target: thread
+Invoking: MacOS X C Linker
+gcc  -o "thread"  ./src/thread.o   
+Finished building target: thread
+ 
+
+11:27:57 Build Finished (took 204ms)
+

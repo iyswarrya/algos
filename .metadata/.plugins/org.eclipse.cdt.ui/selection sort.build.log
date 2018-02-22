@@ -1,0 +1,15 @@
+20:54:00 **** Incremental Build of configuration Debug for project selection sort ****
+make all 
+Building file: ../src/selection sort.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/selection sort.d" -MT"src/selection\ sort.d" -o "src/selection sort.o" "../src/selection sort.c"
+Finished building: ../src/selection sort.c
+ 
+Building target: selection sort
+Invoking: MacOS X C Linker
+gcc  -o "selection sort"  ./src/selection\ sort.o   
+Finished building target: selection sort
+ 
+
+20:54:00 Build Finished (took 132ms)
+

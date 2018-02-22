@@ -1,0 +1,26 @@
+22:54:59 **** Incremental Build of configuration Debug for project trie ****
+make all 
+Building file: ../src/trie.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/trie.d" -MT"src/trie.o" -o "src/trie.o" "../src/trie.c"
+../src/trie.c:41:15: warning: implicitly declaring library function 'strlen' with type 'unsigned long (const char *)' [-Wimplicit-function-declaration]
+        int length = strlen(key);
+                     ^
+../src/trie.c:41:15: note: include the header <string.h> or explicitly provide a declaration for 'strlen'
+../src/trie.c:40:6: warning: unused variable 'level' [-Wunused-variable]
+        int level;
+            ^
+../src/trie.c:57:6: warning: unused variable 'level' [-Wunused-variable]
+        int level;
+            ^
+3 warnings generated.
+Finished building: ../src/trie.c
+ 
+Building target: trie
+Invoking: MacOS X C Linker
+gcc  -o "trie"  ./src/trie.o   
+Finished building target: trie
+ 
+
+22:54:59 Build Finished (took 461ms)
+
