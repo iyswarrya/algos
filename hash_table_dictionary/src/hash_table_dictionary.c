@@ -46,7 +46,7 @@ int hashcode(char *key, int size){
 	//printf("%s\n",key);
 	for(int i=0;i<strlen(key);i++){
 		//printf("%c\t%d\n",*(key+i),(*(key+i)-'0'));
-		hashcode += (*(key+i)-'0')*31*i;
+		hashcode += (*(key+i))*31*i;
 	}
 
 	return hashcode % size;
@@ -148,53 +148,54 @@ void print(hash_map *hashmap){
 	}
 }
 
+
+
 void insertFromFile( hash_map * hash_map){
 	static const char filename[] = "words.txt";
 	FILE *file = fopen ( filename, "r" );
 	int ch,lines=0;
+	//read file to know the number of lines
 	do
 	{
 		ch = fgetc(file);
+		// since the file content is line based (each word and meaning is a row in the file)
 		if (ch == '\n')
+			//increment the no of lines when a \n is encountered
 			lines++;
 	} while (ch != EOF);
-
+	// since the file pointer is moved to the bottom, we need to move back to the start of the file pointer
 	rewind(file);
 	printf("%d\n",lines);
 	char *contents[lines];
 	int i = 0;
 	size_t len = 0;
+	//read all the content line by line in to the string array
 	for(i = 0; i < lines; i++)
 	{
 		contents[i] = NULL;
 		len = 0;
 		getline(&contents[i], &len, file);
 	}
+	//close the file - we dont know any more
+	fclose(file);
+
+
 	for(i = 0; i < lines; i++)
 	{// for each line from the file
 		char *ch;
-		//split by tab
+		//split by tab (the word and the meaning is delimited by a \t)
 		ch = strtok(contents[i], "\t");//will return first token of the first word split by tab
-		int k=0;
+
 		char * key;
 		char * value;
-		while (ch != NULL) {
-			if(k==0){
-				//printf("%s\n",ch);
-				// to get actual word
-				key=ch;
-			}else{
-				//printf("%s\n",ch);
-				// to get meaning in the second iteration
-				value=ch;
-			}
-			//printf("----------------------------------------\n");
-			k++;
-			ch = strtok(NULL, "\n");//
-		}
+		key=ch;
+		ch = strtok(NULL, "\n");
+		value=ch;
+
+		// call insert in hashmap to enter the key and value
 		insert(key, value,hash_map);
 	}
-	fclose(file);
+
 }
 
 
