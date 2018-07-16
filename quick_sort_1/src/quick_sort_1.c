@@ -18,7 +18,7 @@ int main(void) {
 	int size = sizeof(array)/sizeof(int);
 	quickSort(array,0,size-1);
 	for(int j =0;j<size;j++){
-		printf("%d\n",array[j]);
+		printf("%d\n\n\n\n\n",array[j]);
 	}
 
 	return 0;
